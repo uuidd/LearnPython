@@ -18,8 +18,11 @@ el1.send_keys("selenium")
 el2 = driver.find_element_by_id("sb_form_go")
 el2.click()
 
+# 退回到最外层表单
 driver.switch_to.default_content()
-# 退回最出表单
+# 退回到上层表单页面
+driver.switch_to.parent_frame()
+
 try:
     driver.find_element_by_id("sb_form_go")
 except:
