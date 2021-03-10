@@ -1,6 +1,23 @@
 import os
 import time
 
+def get_all_paths(path):
+    """
+    获取文件夹中的所有文件
+    """
+    all_files = []
+    if os.path.isdir(path):
+        child_file = os.listdir(path)
+        file_list = ["%s"%(path + os.path.sep + f) for f in child_file]
+        while file_list is not None and len(file_list) > 0:
+            all_files.append(file_list[0])
+            if os.path.isdir(file_list[0]):
+                child_file = os.listdir(file_list[0])
+                if child_file is not None and len(child_file) > 0:
+                    file_list = file_list + ["%s"%(file_list[0] + os.path.sep + f) for f in child_file]
+                file_list.pop(0)
+    else:
+        print("找不到目录")
 
 def learn_os():
     # 创建文件夹
