@@ -2,23 +2,22 @@ class Student:
     # 方法没有重载，因为参数数量可变，而且没有数据类型
 
     # 类属性
-    company = "XRG" 
+    company = "XRG"
 
     # 
     def __init__(self, name, score):
         self.name = name
         self.score = score
-    
+
     # 析构方法
     def __del__(self):
         print("销毁对象{0}".format(self))
-    
+
     # def __call__(self)相当于两小括号，pt_score()
     # 调用函数
     def pt_score(self):
         print("{0}的分数为{1}".format(self.name, self.score))
-    
-    
+
     # 类方法，操作类,默认参数cls指类当前对象 
     @classmethod
     def printCompany(cls):
@@ -30,7 +29,7 @@ class Student:
     def add(a, b):
         print("{0}+{1}={2}".format(a, b, (a + b)))
         return a + b
-    
+
     def go(self):
         s1 = Student("琼瑜", 100)
         s2 = Student("毅辉", 50)
@@ -40,11 +39,11 @@ class Student:
         # 获取对象的所有属性、方法
         print(dir(Student))
 
-        #对象的字典
+        # 对象的字典
         print(s1.__dict__)
 
         print(isinstance(s1, Student))
-        
+
         Student.add(20, 30)
 
 
@@ -53,7 +52,7 @@ class Person:
 
     def work(self):
         print("努力上班！")
-    
+
     def go(self):
         Person.play = play_game
         p1 = Person()
@@ -64,19 +63,21 @@ class Person:
 
         p1.work()
 
+
 def play_game(who):
     print("{0}在玩游戏".format(who))
+
 
 def work2(self):
     print("好好工作，努力上班！赚大钱，娶媳妇！")
 
+
 class Employee:
-    
 
     def __init__(self, name, age):
         self.name = name
-        self.__age = age    # 私有属性 
-    
+        self.__age = age  # 私有属性
+
     # 私有方法
     def __work(self):
         print("年龄：{0}".format(self.__age))
@@ -85,14 +86,21 @@ class Employee:
         e1 = Employee("琼瑜", 18)
 
         print(e1._Employee__age)
-        e1._Employee__work()         
+        e1._Employee__work()
+
+
+def go():
+    e2 = Employee2("琼瑜", 10000)
+    e2.set_salary(6000)
+    print(e2.get_salary())
+
 
 class Employee2:
-    
+
     def __init__(self, name, salary):
         self.__name = name
         self.__salary = salary
-    
+
     def get_salary(self):
         return self.__salary
 
@@ -102,24 +110,18 @@ class Employee2:
         else:
             print("录入错误，薪水应在1000-50000之间")
 
-    def go(self):
-        e2 = Employee2("琼瑜", 10000)
-        e2.set_salary(6000)
-        print(e2.get_salary())
 
 class Employee3:
-
 
     def __init__(self, name, salary):
         self.__name = name
         self.__salary = salary
-    
+
     @property
     def salary(self):
         return self.__salary
 
-
-    @salary.setter   # 针对salary的设置
+    @salary.setter  # 针对salary的设置
     def salary(self, salary):
         if 1000 < salary < 50000:
             self.__salary = salary
@@ -136,24 +138,29 @@ class Employee3:
 class Man:
     def eat(self):
         print("饿了，吃饭啦！")
-    
+
+
 class Chinese(Man):
     def eat(self):
         print("中国人用筷子吃饭")
+
 
 class English(Man):
     def eat(self):
         print("英国人用筷子吃饭")
 
+
 class Indian(Man):
     def eat(self):
         print("印度人用筷子吃饭")
+
 
 def man_eat(m):
     if isinstance(m, Man):
         m.eat()
     else:
         print("不能吃饭")
+
 
 def go():
     man_eat(Chinese())
@@ -164,15 +171,15 @@ def go():
 class Person1:
     def __init__(self, name):
         self.name = name
-    
+
     def __add__(self, other):
         if isinstance(other, Person1):
             return "{0}{1}".format(self.name, other.name)
         else:
             return "不是同类对象，不能相加"
 
+
 p1 = Person1("相加")
 p2 = Person1("向家")
 
 print(p1 + p2)
-
