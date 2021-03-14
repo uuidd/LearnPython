@@ -1,5 +1,6 @@
 import pytest
 
+
 # def re_data_list():
 #     list_data = []
 #     with open(r"D:\Python\Appium\four\data\data1.txt", 'r') as f:
@@ -8,8 +9,8 @@ import pytest
 #         print(i)
 #     return list_data 
 
-class Test_Para:
-    
+class TestPara:
+
     @pytest.mark.parametrize('one, two', [(1, 2), (3, 4)])
     def test_p1(self, one, two):
         # print(three:%s, four:%s" % (one, two))
