@@ -13,9 +13,13 @@ pwd_textbox.send_keys("1234")
 # 回车登录
 pwd_textbox.send_keys(Keys.ENTER)
 time.sleep(5)
+
+
 # 智能等待
 def wait_el(driver, func):
     return WebDriverWait(driver, 10).until(func)
+
+
 side_button = wait_el(driver, lambda driver: driver.find_element_by_css_selector(".sidebar-toggle"))
 side_button.click()
 # 右键

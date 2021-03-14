@@ -15,11 +15,12 @@ contest py配置需要注意：
     不需要 import导入conftset.py， pytest用例会自动查找
     全局的配置和前期工作都可以写在这里，放在某个包下，就是这个包数据共享的地方。
 yield
-    场景：你已经可以将测试方法前要执行的或依赖的解决了，测试方法后销毁清除数据的要如何进行呢？范围是模块级别的。类似 setup Class
-    解决：通过在同一模块中加入yield关键字，yield是调用第一次返回结果类似return，第二次执行它下面的语句返回。
-    步骤：在@pytest fixture(scope="module"),module可以换成class，package
+    yield + 函数 == 生成器
+    新建生成器p
+    next(p)会一步一个值返回，不像return只能一次性返回
+    相当于return + 暂停 + 记录上一次运行的位置
     在登陆的方法中加 yield，之后加销毁清除的步骤
-    注意，这种方式没有返回值，如果希望返回使用addfinalizer
+    你已经可以将测试方法前要执行的或依赖的解决了，测试方法后销毁清除数据的要如何进行呢？
 
 """
 
@@ -54,5 +55,5 @@ def pytest_configure(config):
         )
 
 
-a = yaml.safe_load(open("./data.yaml"))
+a = yaml.safe_load(open("data.yml"))
 print(a)

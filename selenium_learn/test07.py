@@ -26,5 +26,3 @@ driver.switch_to.default_content()
 # 隐式等待，最多等待几秒等元素出现，全局，常用，无需导入
 driver.implicitly_wait(10)
 driver.quit()
-
-

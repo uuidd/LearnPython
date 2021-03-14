@@ -4,15 +4,18 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b45b1405-570a-4b65-aca5-3aa735036d91" name="Default Changelist" comment="学习unittest">
-      <change afterPath="$PROJECT_DIR$/selenium_learn/conftest.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/selenium_learn/data.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/selenium_learn/learn_pytest.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/LearnPython.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/LearnPython.iml" afterDir="false" />
+    <list default="true" id="b45b1405-570a-4b65-aca5-3aa735036d91" name="Default Changelist" comment="学习pytest,yaml">
+      <change afterPath="$PROJECT_DIR$/selenium_learn/pytest.ini" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/other/read_data.py" beforeDir="false" afterPath="$PROJECT_DIR$/other/read_data.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/other/test_parametrize.py" beforeDir="false" afterPath="$PROJECT_DIR$/other/test_parametrize.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/other/testgetlocal.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/selenium_learn/conftest.py" beforeDir="false" afterPath="$PROJECT_DIR$/selenium_learn/conftest.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/selenium_learn/data.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/selenium_learn/data.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/selenium_learn/learn_pytest.py" beforeDir="false" afterPath="$PROJECT_DIR$/selenium_learn/learn_pytest.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/selenium_learn/test01.py" beforeDir="false" afterPath="$PROJECT_DIR$/selenium_learn/test01.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/selenium_learn/test04.py" beforeDir="false" afterPath="$PROJECT_DIR$/selenium_learn/test04.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/selenium_learn/test05.py" beforeDir="false" afterPath="$PROJECT_DIR$/selenium_learn/test05.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/selenium_learn/test06.py" beforeDir="false" afterPath="$PROJECT_DIR$/selenium_learn/test06.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/selenium_learn/test07.py" beforeDir="false" afterPath="$PROJECT_DIR$/selenium_learn/test07.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/selenium_learn/test08.py" beforeDir="false" afterPath="$PROJECT_DIR$/selenium_learn/test08.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -270,7 +273,14 @@
       <option name="project" value="LOCAL" />
       <updated>1615470825567</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="学习pytest,yaml">
+      <created>1615702093823</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1615702093823</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -301,7 +311,8 @@
     <MESSAGE value="学习urllib和math库" />
     <MESSAGE value="学习多线程" />
     <MESSAGE value="学习unittest" />
-    <option name="LAST_COMMIT_MESSAGE" value="学习unittest" />
+    <MESSAGE value="学习pytest,yaml" />
+    <option name="LAST_COMMIT_MESSAGE" value="学习pytest,yaml" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$APPLICATION_HOME_DIR$/helpers/typeshed/stdlib/2and3/time.pyi">

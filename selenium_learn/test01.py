@@ -1,5 +1,4 @@
 from selenium import webdriver
-import time
 
 driver = webdriver.Firefox()
 
@@ -7,7 +6,7 @@ driver = webdriver.Firefox()
 url1 = "http://www.baidu.com/"
 driver.get(url1)
 
-url2 = "http://www.ilxdh.com/" 
+url2 = "http://www.ilxdh.com/"
 driver.get(url2)
 # 窗口最大化
 driver.maximize_window()
@@ -28,7 +27,7 @@ driver.current_url
 # 显示当前的页面标题
 driver.title
 # 获取网站源码
-driver.page_source 
+driver.page_source
 # 直接保存文件保存快照操作
 driver.get_screenshot_as_file("C:/Users/Zz/Desktop/1.jpg")
 # 保存快照操作2，二进制文件

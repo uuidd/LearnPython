@@ -1,8 +1,6 @@
-from selenium import webdriver
-from selenium.webdriver.support.select import Select
 import time
 
-
+from selenium import webdriver
 
 # 下拉操作selenium无法实现，只能依靠JavaScript
 driver = webdriver.Firefox()
@@ -16,8 +14,6 @@ driver.find_element_by_css_selector(".close-btn").click()
 
 # 持续下拉
 for i in range(30):
-    js2 = "window.scrollTo(0, %s)"%(i * 100)
+    js2 = "window.scrollTo(0, %s)" % (i * 100)
     driver.execute_script(js2)
     time.sleep(0.1)
-
- 

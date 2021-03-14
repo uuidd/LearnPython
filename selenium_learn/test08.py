@@ -1,7 +1,5 @@
 from selenium import webdriver
 
-
-
 driver = webdriver.Firefox()
 driver.get("https://192.168.82.186:8443")
 user_textbox = driver.find_element_by_css_selector(".form-control.free_form_user")

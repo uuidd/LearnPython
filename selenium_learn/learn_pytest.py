@@ -13,7 +13,7 @@ pytest可以执行 unittest框架写的用例和方法
     pytest -v 最高级别信息输出
     pytest -q 最简洁报告模式执行测试功能
     pytest -s 输出所有测试用的 print信息
-    pytest -m 执行自定义标记的相关用例
+    pytest -m 执行自定义标记的相关用例，结合@pytest.mask.标记名
 断言失败也可继续执行
     pip install pytest-assume
     pytest.assume(1 == 4)
@@ -47,6 +47,24 @@ yaml
     pip install pytest-html
     生成html报告
     pytest -v -s --html-=report.html --self-contained-html
+pytest.mark.run(order=1)，不推荐
+    pip install pytest-order
+    为测试用例设置顺序
+pip freeze
+    查看虚拟环境，环境依赖包有哪些
+    导出
+        pip freeze > requirements.txt
+    安装
+        pip install -r requirements.txt
+pytest --setup-show
+    查看每个用例fixture的调用顺序
+作用域
+    场景：范围是模块级别的。类似 setup Class
+    解决：通过在同一模块中加入yield关键字，yield是调用第一次返回结果类似return，第二次执行它下面的语句返回。
+    步骤：在@pytest fixture(scope="module"),module可以换成class，package，session
+    注意，这种方式没有返回值，如果希望返回使用addfinalizer（终结器 ）
+    把作用域设置成session就是全局了，全局可用
+    不用 append到全局安量了更方便，fixture可以用来共享一些数
 """
 
 # content of test_sample.p
@@ -150,9 +168,31 @@ def test_find2():
     print("find2")
 
 
-@pytest.mark.parametrize(("a1", "b1"), yaml.safe_load(open("./data.yaml")))
+@pytest.mark.parametrize(("a1", "b1"), yaml.safe_load(open("data.yml")))
 def test_yaml(a1, b1):
     print(a1 + b1)
+
+
+# @pytest.mark.parametrize("env", yaml.safe_load(open("./data.yml")))
+# def test_yaml1(env):
+#     if "test" in env:
+#         print("测试环境的ip是：" + env["test"])
+#     elif "dev" in env:
+#         print("开发环境的ip是：" + env["dev"])
+
+
+# 工厂模式，反向赋值，make_customer_record, test_cust_record
+@pytest.fixture
+def make_customer_record():
+    def _make_customer_record(name):
+        return {"name": name, "orders": []}
+
+    return _make_customer_record
+
+
+def test_customer_record(make_customer_record):
+    customer1 = make_customer_record("Lisa")
+    customer2 = make_customer_record("Mike")
 
 
 if __name__ == '__main__':
