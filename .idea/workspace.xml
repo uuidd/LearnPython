@@ -4,18 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b45b1405-570a-4b65-aca5-3aa735036d91" name="Default Changelist" comment="学习pytest,yaml">
-      <change afterPath="$PROJECT_DIR$/selenium_learn/pytest.ini" afterDir="false" />
+    <list default="true" id="b45b1405-570a-4b65-aca5-3aa735036d91" name="Default Changelist" comment="学习pytest,yaml2">
+      <change afterPath="$PROJECT_DIR$/tool/fill_questionnaire.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/LearnPython.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/LearnPython.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/selenium_learn/conftest.py" beforeDir="false" afterPath="$PROJECT_DIR$/selenium_learn/conftest.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/selenium_learn/data.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/selenium_learn/data.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/selenium_learn/learn_pytest.py" beforeDir="false" afterPath="$PROJECT_DIR$/selenium_learn/learn_pytest.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/selenium_learn/test01.py" beforeDir="false" afterPath="$PROJECT_DIR$/selenium_learn/test01.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/selenium_learn/test04.py" beforeDir="false" afterPath="$PROJECT_DIR$/selenium_learn/test04.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/selenium_learn/test05.py" beforeDir="false" afterPath="$PROJECT_DIR$/selenium_learn/test05.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/selenium_learn/test06.py" beforeDir="false" afterPath="$PROJECT_DIR$/selenium_learn/test06.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/selenium_learn/test07.py" beforeDir="false" afterPath="$PROJECT_DIR$/selenium_learn/test07.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/selenium_learn/test08.py" beforeDir="false" afterPath="$PROJECT_DIR$/selenium_learn/test08.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -103,7 +96,7 @@
     <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
     <property name="settings.editor.selected.configurable" value="configurable.group.tools" />
   </component>
-  <component name="RunManager" selected="Python 测试.learn_pytest.py 中的 pytest">
+  <component name="RunManager" selected="Python.fill_questionnaire">
     <configuration name="Unnamed" type="PythonConfigurationType" factoryName="Python" nameIsGenerated="true">
       <module name="LearnPython" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -138,6 +131,27 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/selenium_learn/conftest.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="fill_questionnaire" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="LearnPython" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/tool" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/tool/fill_questionnaire.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -194,35 +208,21 @@
       <option name="_new_targetType" value="&quot;PYTHON&quot;" />
       <method v="2" />
     </configuration>
-    <configuration name="learn_unittest.py 中的 Unittest" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
-      <module name="LearnPython" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/selenium_learn" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;$PROJECT_DIR$/selenium_learn/learn_unittest.py&quot;" />
-      <option name="_new_targetType" value="&quot;PATH&quot;" />
-      <method v="2" />
-    </configuration>
     <list>
       <item itemvalue="Python.Unnamed" />
-      <item itemvalue="Python 测试.learn_unittest.py 中的 Unittest" />
+      <item itemvalue="Python.conftest" />
       <item itemvalue="Python 测试.learn_pytest.py 中的 pytest" />
       <item itemvalue="Python 测试.learn_pytest.test_answer 的 pytest" />
       <item itemvalue="Python 测试.learn_pytest.test_case1 的 pytest" />
-      <item itemvalue="Python.conftest" />
+      <item itemvalue="Python.fill_questionnaire" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.fill_questionnaire" />
         <item itemvalue="Python 测试.learn_pytest.py 中的 pytest" />
         <item itemvalue="Python.conftest" />
         <item itemvalue="Python 测试.learn_pytest.test_case1 的 pytest" />
         <item itemvalue="Python 测试.learn_pytest.test_answer 的 pytest" />
-        <item itemvalue="Python 测试.learn_unittest.py 中的 Unittest" />
       </list>
     </recent_temporary>
   </component>
@@ -280,7 +280,14 @@
       <option name="project" value="LOCAL" />
       <updated>1615702093823</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="学习pytest,yaml2">
+      <created>1615730194665</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1615730194665</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -312,7 +319,19 @@
     <MESSAGE value="学习多线程" />
     <MESSAGE value="学习unittest" />
     <MESSAGE value="学习pytest,yaml" />
-    <option name="LAST_COMMIT_MESSAGE" value="学习pytest,yaml" />
+    <MESSAGE value="学习pytest,yaml2" />
+    <option name="LAST_COMMIT_MESSAGE" value="学习pytest,yaml2" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <default-breakpoints>
+        <breakpoint type="python-exception">
+          <properties notifyOnTerminate="true" exception="BaseException">
+            <option name="notifyOnTerminate" value="true" />
+          </properties>
+        </breakpoint>
+      </default-breakpoints>
+    </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$APPLICATION_HOME_DIR$/helpers/typeshed/stdlib/2and3/time.pyi">
