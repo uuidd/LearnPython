@@ -4,11 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b45b1405-570a-4b65-aca5-3aa735036d91" name="Default Changelist" comment="学习pytest,yaml2">
-      <change afterPath="$PROJECT_DIR$/tool/fill_questionnaire.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/LearnPython.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/LearnPython.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="b45b1405-570a-4b65-aca5-3aa735036d91" name="Default Changelist" comment="问卷星填表">
+      <change afterPath="$PROJECT_DIR$/tool/find_proxy_ip.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tool/fill_questionnaire.py" beforeDir="false" afterPath="$PROJECT_DIR$/tool/fill_questionnaire.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -211,10 +210,10 @@
     <list>
       <item itemvalue="Python.Unnamed" />
       <item itemvalue="Python.conftest" />
+      <item itemvalue="Python.fill_questionnaire" />
       <item itemvalue="Python 测试.learn_pytest.py 中的 pytest" />
       <item itemvalue="Python 测试.learn_pytest.test_answer 的 pytest" />
       <item itemvalue="Python 测试.learn_pytest.test_case1 的 pytest" />
-      <item itemvalue="Python.fill_questionnaire" />
     </list>
     <recent_temporary>
       <list>
@@ -287,7 +286,14 @@
       <option name="project" value="LOCAL" />
       <updated>1615730194665</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="问卷星填表">
+      <created>1619087942731</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1619087942731</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -320,7 +326,8 @@
     <MESSAGE value="学习unittest" />
     <MESSAGE value="学习pytest,yaml" />
     <MESSAGE value="学习pytest,yaml2" />
-    <option name="LAST_COMMIT_MESSAGE" value="学习pytest,yaml2" />
+    <MESSAGE value="问卷星填表" />
+    <option name="LAST_COMMIT_MESSAGE" value="问卷星填表" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -332,6 +339,11 @@
         </breakpoint>
       </default-breakpoints>
     </breakpoint-manager>
+    <watches-manager>
+      <configuration name="PythonConfigurationType">
+        <watch expression="UserAgent().random" />
+      </configuration>
+    </watches-manager>
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$APPLICATION_HOME_DIR$/helpers/typeshed/stdlib/2and3/time.pyi">
