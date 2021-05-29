@@ -4,10 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b45b1405-570a-4b65-aca5-3aa735036d91" name="Default Changelist" comment="问卷星填表">
-      <change afterPath="$PROJECT_DIR$/tool/find_proxy_ip.py" afterDir="false" />
+    <list default="true" id="b45b1405-570a-4b65-aca5-3aa735036d91" name="Default Changelist" comment="防智能检测">
+      <change afterPath="$PROJECT_DIR$/other/analytical_data.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/other/附件1.xlsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/LearnPython.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/LearnPython.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tool/fill_questionnaire.py" beforeDir="false" afterPath="$PROJECT_DIR$/tool/fill_questionnaire.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -91,11 +93,16 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/selenium_learn/learn_openpyxl.py" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
     <property name="settings.editor.selected.configurable" value="configurable.group.tools" />
   </component>
-  <component name="RunManager" selected="Python.fill_questionnaire">
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\MyDatabase\Code\Python\LearnPython\other" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Python.analytical_data">
     <configuration name="Unnamed" type="PythonConfigurationType" factoryName="Python" nameIsGenerated="true">
       <module name="LearnPython" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -109,6 +116,27 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="SCRIPT_NAME" value="" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="analytical_data" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="LearnPython" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/other" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/other/analytical_data.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -175,22 +203,6 @@
       <option name="_new_targetType" value="&quot;PATH&quot;" />
       <method v="2" />
     </configuration>
-    <configuration name="learn_pytest.test_answer 的 pytest" type="tests" factoryName="py.test" temporary="true" nameIsGenerated="true">
-      <module name="LearnPython" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/selenium_learn" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="_new_keywords" value="&quot;&quot;" />
-      <option name="_new_parameters" value="&quot;&quot;" />
-      <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;learn_pytest.test_answer&quot;" />
-      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
-      <method v="2" />
-    </configuration>
     <configuration name="learn_pytest.test_case1 的 pytest" type="tests" factoryName="py.test" temporary="true" nameIsGenerated="true">
       <module name="LearnPython" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -209,19 +221,19 @@
     </configuration>
     <list>
       <item itemvalue="Python.Unnamed" />
+      <item itemvalue="Python.analytical_data" />
       <item itemvalue="Python.conftest" />
       <item itemvalue="Python.fill_questionnaire" />
       <item itemvalue="Python 测试.learn_pytest.py 中的 pytest" />
-      <item itemvalue="Python 测试.learn_pytest.test_answer 的 pytest" />
       <item itemvalue="Python 测试.learn_pytest.test_case1 的 pytest" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.analytical_data" />
         <item itemvalue="Python.fill_questionnaire" />
         <item itemvalue="Python 测试.learn_pytest.py 中的 pytest" />
         <item itemvalue="Python.conftest" />
         <item itemvalue="Python 测试.learn_pytest.test_case1 的 pytest" />
-        <item itemvalue="Python 测试.learn_pytest.test_answer 的 pytest" />
       </list>
     </recent_temporary>
   </component>
@@ -293,7 +305,14 @@
       <option name="project" value="LOCAL" />
       <updated>1619087942731</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="防智能检测">
+      <created>1619168470189</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1619168470189</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -327,7 +346,8 @@
     <MESSAGE value="学习pytest,yaml" />
     <MESSAGE value="学习pytest,yaml2" />
     <MESSAGE value="问卷星填表" />
-    <option name="LAST_COMMIT_MESSAGE" value="问卷星填表" />
+    <MESSAGE value="防智能检测" />
+    <option name="LAST_COMMIT_MESSAGE" value="防智能检测" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
