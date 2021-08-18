@@ -30,7 +30,7 @@ class ADarkRoom:
         点击按钮，用id定位
         :param id_name: 按钮的id名称
         """
-        try:
+        if self.driver.find_element_by_id("event"):
             title = self.get_event_title()
             if title == "Sound Available!":
                 self.click_button_id("no")
@@ -45,19 +45,23 @@ class ADarkRoom:
                 self.click_button_id("end")
             elif title == "神秘流浪者":
                 self.click_button_id("deny")
-        except NoSuchElementException:
-            self.click_button_id(id_name)
+        if id_name == "gatherButton" :
+
+        self.click_button_id(id_name)
 
     def go(self):
-        self.click_button("lightButton")
+        for _ in range(10):
+            self.click_button("lightButton")
         self.click_button("stokeButton")
+        sleep(10)
         self.click_button("gatherButton")
+        sleep(10)
         self.click_button("build_trap")
         self.click_button("build_cart")
         self.click_button("trapsButton")
         self.click_button("build_hut")
 
-
 if __name__ == '__main__':
     room = ADarkRoom()
     room.go()
+
