@@ -6,11 +6,16 @@ from selenium import webdriver
 from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.support import expected_conditions as ec
 from selenium.webdriver.common.by import By
+from selenium.webdriver.chrome.options import Options
 
 
 class ADarkRoom:
     def __init__(self):
-        self.driver = webdriver.Chrome(r'D:\UserSoftware\Chrome\App\chromedriver.exe')
+        chrome_options = Options()
+        chrome_options.add_argument('--headless')
+        chrome_options.add_argument('--disable-gpu')
+        chrome_options.add_experimental_option("detach", True)  # 不关闭浏览器
+        self.driver = webdriver.Chrome()
         self.driver.get("http://adarkroom.doublespeakgames.com/?lang=zh_cn")
         WebDriverWait(self.driver, 60).until(ec.visibility_of_element_located((By.ID, "location_room")))
 
@@ -52,6 +57,7 @@ class ADarkRoom:
                 self.click_button_id("mourn")
             elif title == "患病男子":
                 self.click_button_id("ignore")
+        self.click_button_id(ele_id)
 
     def get_ele(self, ele_id):
         return WebDriverWait(self.driver, 60).until(ec.visibility_of_element_located((By.ID, ele_id)))
