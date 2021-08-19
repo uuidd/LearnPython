@@ -6,18 +6,14 @@ from selenium import webdriver
 from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.support import expected_conditions as ec
 from selenium.webdriver.common.by import By
-from selenium.webdriver.chrome.options import Options
 
 
 class ADarkRoom:
     def __init__(self):
-        chrome_options = Options()
-        chrome_options.add_argument('--headless')
-        chrome_options.add_argument('--disable-gpu')
-        chrome_options.add_experimental_option("detach", True)  # 不关闭浏览器
         self.driver = webdriver.Chrome()
         self.driver.get("http://adarkroom.doublespeakgames.com/?lang=zh_cn")
-        WebDriverWait(self.driver, 60).until(ec.visibility_of_element_located((By.ID, "location_room")))
+        # 等待第一个事件出现
+        WebDriverWait(self.driver, 60).until(ec.visibility_of_element_located((By.ID, "event")))
 
     def get_event_title(self):
         """
@@ -31,15 +27,16 @@ class ADarkRoom:
         点击id属性的按钮
         :param ele_id: 按钮的id名称
         """
-        self.get_ele(ele_id).click()
+        WebDriverWait(self.driver, 70).until(ec.visibility_of_element_located((By.ID, ele_id))).click()
 
     def click_button(self, ele_id):
         """
         点击按钮，用id定位
         :param ele_id: 按钮的id名称
         """
-        if self.driver.find_element_by_id("event"):
+        try:
             title = self.get_event_title()
+            print(title)
             if title == "Sound Available!":
                 self.click_button_id("no")
             elif title == "Penrose":
@@ -57,10 +54,10 @@ class ADarkRoom:
                 self.click_button_id("mourn")
             elif title == "患病男子":
                 self.click_button_id("ignore")
-        self.click_button_id(ele_id)
+        except:
+            pass
 
-    def get_ele(self, ele_id):
-        return WebDriverWait(self.driver, 60).until(ec.visibility_of_element_located((By.ID, ele_id)))
+        self.click_button_id(ele_id)
 
     def go(self):
         self.click_button("lightButton")
