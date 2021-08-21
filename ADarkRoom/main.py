@@ -3,7 +3,7 @@
 from time import sleep
 
 from selenium import webdriver
-from selenium.webdriver import ActionChains
+# from selenium.webdriver import ActionChains
 from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.support import expected_conditions as ec
 from selenium.webdriver.common.by import By
@@ -14,7 +14,7 @@ class ADarkRoom:
     def __init__(self):
         self.driver = webdriver.Chrome()  # 实例化一个浏览器对象
         # self.driver.get("http://adarkroom.doublespeakgames.com/?lang=zh_cn")  # 加载到小黑屋
-        self.driver.get("file:///C:/Users/lenovo/Downloads/adarkroom/index.html?lang=zh_cn")  # 加载到小黑屋
+        self.driver.get("file:///D:/BrowserFile/adarkroom-main/adarkroom-main/index.html?lang=zh_cn")  # 加载到小黑屋
         WebDriverWait(self.driver, 60).until(ec.visibility_of_element_located((By.ID, "event")))  # 等待第一个事件出现
         self.click_button("lightButton")  # 生火-游戏开始
         self.click_ele(By.CSS_SELECTOR, ".hyper")  # 加速
@@ -41,7 +41,7 @@ class ADarkRoom:
 
     def click_button_id(self, button_id):
         """
-        点击id属性的按钮
+        点击id属性的按钮, 有等待
         :param button_id: 按钮的id名称
         """
         WebDriverWait(self.driver, 45).until(lambda x: self.is_clicked(x, button_id))  # 开了加速最多等待45秒，陷阱原速90秒
@@ -53,7 +53,17 @@ class ADarkRoom:
         :param by: By.ID By.CLASS_NAME
         :param value: 对应值
         """
-        self.driver.execute_script("arguments[0].click();", self.driver.find_element(by, value))
+        try:
+            self.driver.execute_script("arguments[0].click();", self.driver.find_element(by, value))
+        except NoSuchElementException:
+            print("{0} = {1} element not found!".format(by, value))
+
+    def click_ele_id(self, ele_id):
+        """
+        点击元素 无等待
+        :param ele_id: 元素id
+        """
+        self.click_ele(By.ID, ele_id)
 
     @staticmethod
     def is_clicked(driver, button_id):
@@ -71,38 +81,43 @@ class ADarkRoom:
             else:
                 return button
         except NoSuchElementException:  # 找不到按钮报错
-            print("Button not found！")
+            print(button_id + " not found！")
 
     def handling_events(self):
         if self.is_exist(By.CLASS_NAME, "eventTitle"):
             title = self.driver.find_element_by_class_name("eventTitle").text  # 获取事件标题
             print(title)
             if title == "Sound Available!":
-                self.click_button_id("no")
+                self.click_ele_id("no")
             elif title == "Penrose":
-                self.click_button_id("give in")
+                self.click_ele_id("give in")
                 windows = self.driver.window_handles  # 获取当前所有页面句柄
                 self.driver.switch_to.window(windows[1])  # 切换当新页面
                 self.driver.close()  # 关闭
                 self.driver.switch_to.window(windows[0])  # 切换指定页面
             elif title == "噪声":
-                self.click_button_id("investigate")
-                self.click_button_id("backinside")
+                self.click_ele_id("investigate")
+                if self.is_exist(By.ID, "leave"):
+                    self.click_ele_id("leave")
+                else:
+                    self.click_ele_id("backinside")
             elif title == "损毁的陷阱":
-                self.click_button_id("track")
-                self.click_button_id("end")
+                self.click_ele_id("track")
+                self.click_ele_id("end")
             elif title in ["神秘流浪者", "乞丐"]:
-                self.click_button_id("deny")
+                self.click_ele_id("deny")
             elif title == "火灾":
-                self.click_button_id("mourn")
+                self.click_ele_id("mourn")
             elif title == "患病男子":
-                self.click_button_id("ignore")
+                self.click_ele_id("ignore")
             elif title == "要加速么？":
-                self.click_button_id("yes")
+                self.click_ele_id("yes")
+            elif title == "野兽来袭":
+                self.click_ele_id("end")
             else:
-                print("Accident {0}!".format(title))
+                print("Accident {0}".format(title))
 
-    def is_exist(self, by, value=None):
+    def is_exist(self, by, value):
         """
         判断元素是否存在
         is_exist(By.CLASS_NAME, "eventTitle")
@@ -197,10 +212,20 @@ class ADarkRoom:
         while self.get_resource_val("row_wood") < 30:
             self.click_button("gatherButton")
         self.click_button("build_cart")
+        self.click_button("gatherButton")
         self.click_button("build_trap")
+        while self.is_clicked(self.driver, "build_hut"):
+            if self.not_enough("build_hut") is None:   # 判断材料是否足够
+                self.click_button_id("build_hut")
+            else:
+                self.click_button("gatherButton")
+            if not self.is_exist(By.ID, "building_row_trap"):
+                self.click_button("build_trap")
+            else:
+                self.click_button("trapsButton")
+
         sleep(20)
         self.driver.quit()
-
         # self.click_button("trapsButton")
         # self.click_button("build_hut")
         # self.driver.find_element(by, value).click()
@@ -211,8 +236,8 @@ class ADarkRoom:
         #     self.click_ele(By.ID, button_id)
         #     self.click_ele(By.ID, button_id)
         # else:
+        # while self.get_resource_val("row_wood") < self.get_resource_val("building_row_trap") * 10:
 
 
 if __name__ == '__main__':
-    room = ADarkRoom()
-    room.go()
+    ADarkRoom().go()
