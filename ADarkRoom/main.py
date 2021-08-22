@@ -19,6 +19,7 @@ class ADarkRoom:
         self.click_button("lightButton")  # 生火-游戏开始
         self.click_ele(By.CSS_SELECTOR, ".hyper")  # 加速
         self.click_ele(By.CSS_SELECTOR, ".hyper")  # 二次点击 一次点击会失效 可能是由于需要先聚焦
+        self.click_button_id("yes")
 
     def click_button(self, button_id):
         """
@@ -76,7 +77,7 @@ class ADarkRoom:
         try:
             button = driver.find_element_by_id(button_id)  # 获取按钮定位
             button_class = button.get_attribute("class")
-            if button_class == "button disable" or button_class == "button free disabled":  # 按钮的class值有disable就无法点击
+            if button_class == "button disabled" or button_class == "button free disabled":  # 按钮的class值有disable就无法点击
                 return False
             else:
                 return button
@@ -203,6 +204,34 @@ class ADarkRoom:
 
         return dict(zip(keys, values))
 
+    def export_data(self):
+        """
+        导出数据，在脚本所在目录下创建或者覆盖ExportData.txt
+        """
+        self.click_ele(By.CSS_SELECTOR, ".menu > span:nth-child(8)")
+        self.click_ele_id("export")
+        data = self.find_ele(By.CSS_SELECTOR, "#description > textarea").get_attribute("value")
+        self.click_ele_id("done")
+        with open("ExportData.txt", "w") as f:
+            f.write(data)
+        return data
+
+    def import_data(self):
+        """
+        导入ExportData.txt的游戏数据
+        :return:
+        """
+        try:
+            with open("ExportData.txt") as f:
+                data = f.readline()
+            self.click_ele(By.CSS_SELECTOR, ".menu > span:nth-child(8)")
+            self.click_ele_id("import")
+            self.click_ele_id("yes")
+            self.find_ele(By.CSS_SELECTOR, "#description > textarea").send_key(data)
+            self.click_ele_id("okay")
+        except FileNotFoundError:
+            print("ExportData.txt not found!")
+
     def go(self):
         while not self.is_exist(By.ID, "location_outside"):  # 等待静谧森林出现
             self.click_button("stokeButton")
@@ -223,8 +252,8 @@ class ADarkRoom:
                 self.click_button("build_trap")
             else:
                 self.click_button("trapsButton")
-
         sleep(20)
+
         self.driver.quit()
         # self.click_button("trapsButton")
         # self.click_button("build_hut")
