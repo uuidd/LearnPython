@@ -3,7 +3,6 @@
 from time import sleep
 
 from selenium import webdriver
-from selenium.common.exceptions import NoSuchElementException
 
 
 class ADarkRoom:
@@ -45,9 +44,8 @@ class ADarkRoom:
                 self.click_button_id("end")
             elif title == "神秘流浪者":
                 self.click_button_id("deny")
-        if id_name == "gatherButton" :
-
-        self.click_button_id(id_name)
+        if id_name == "gatherButton":
+            self.click_button_id(id_name)
 
     def go(self):
         for _ in range(10):
@@ -61,7 +59,7 @@ class ADarkRoom:
         self.click_button("trapsButton")
         self.click_button("build_hut")
 
+
 if __name__ == '__main__':
     room = ADarkRoom()
     room.go()
-

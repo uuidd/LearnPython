@@ -14,12 +14,11 @@ class ADarkRoom:
     def __init__(self):
         self.driver = webdriver.Chrome()  # 实例化一个浏览器对象
         # self.driver.get("http://adarkroom.doublespeakgames.com/?lang=zh_cn")  # 加载到小黑屋
-        self.driver.get("file:///D:/BrowserFile/adarkroom-main/adarkroom-main/index.html?lang=zh_cn")  # 加载到小黑屋
+        self.driver.get("http://adarkroom.doublespeakgames.com/?lang=zh_cn")  # 加载到小黑屋
         WebDriverWait(self.driver, 60).until(ec.visibility_of_element_located((By.ID, "event")))  # 等待第一个事件出现
         self.click_button("lightButton")  # 生火-游戏开始
         self.click_ele(By.CSS_SELECTOR, ".hyper")  # 加速
         self.click_ele(By.CSS_SELECTOR, ".hyper")  # 二次点击 一次点击会失效 可能是由于需要先聚焦
-        self.click_button_id("yes")
 
     def click_button(self, button_id):
         """
@@ -55,7 +54,8 @@ class ADarkRoom:
         :param value: 对应值
         """
         try:
-            self.driver.execute_script("arguments[0].click();", self.driver.find_element(by, value))
+            ele = self.driver.find_element(by, value)
+            self.driver.execute_script("arguments[0].click()", ele)
         except NoSuchElementException:
             print("{0} = {1} element not found!".format(by, value))
 
